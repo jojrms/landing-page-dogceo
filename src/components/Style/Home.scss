@@ -1,5 +1,136 @@
-$colorText: #000000;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
 
+$heights: 10vh;
+$corSalmao: #FF7670;
+$sombreado: 0px 0px 25px rgba(0, 0, 0, 0.212);
+
+
+
+
+// ESTILIZAÇÃO GERAL 
 body{
-    color: $colorText;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    font-family: Arial;
+}
+body *{
+    background-repeat: no-repeat;
+    background-position: center;
+}
+input, button, img{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+ul{
+    display: flex;
+    padding: 0;
+    list-style: none;
+}
+
+
+header{
+    width: 100%;
+    position: absolute;
+    
+    span{
+        height: 5vh;
+        background-color: black;
+        display: flex;
+        color: white;
+        padding: 0vh 5vw;
+        align-items: center;
+        letter-spacing: .5px;
+
+        p:nth-of-type(1){
+            position: absolute;
+        }
+        p:nth-of-type(2){
+            margin: auto;
+        }
+        input{
+            height: 50%;
+            color: white;
+            padding: 0 1vw;
+            border-right: 1px solid white;
+            margin-right: 1vw;
+        }
+        img:nth-of-type(1){
+            margin: 0vh 1vw 0vh 0vw
+        }
+    }
+
+    section{
+        height: 10vh;
+        display: flex;
+        align-items: center;
+        padding: 0vh 5vw;
+
+        i{
+            width: 8vw;
+            height: 100%;
+            background-image: url(../Images/icon.svg);
+            background-size: contain;
+        }
+        ul{
+            display: flex;
+            grid-gap: 2vw;
+            margin-left: auto;
+            font-weight: 600;
+            
+            li{
+                cursor: pointer;
+            }
+        }
+        input{
+            background-color: black;
+            padding: 2vh 2vw;
+            color: white;
+            border-radius: 6vw;
+            margin-left: 2vw;
+            font-weight: 600;
+            letter-spacing: .5px;
+        }
+    }
+}
+
+.sectionInitial{
+    width: 100%;
+    min-height: 30vh;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    background-image: url(../Images/Background.svg);
+    background-size: cover;
+
+    aside:nth-of-type(2){
+        width: 100%;
+        height: 100%;
+        background-image: url(../Home.js);
+        background-color: red;
+    }
+}
+
+
+// ESTILIZAÇÃO ESPECÍFICA - DESKTOP
+
+@media (min-width: 450px){
+    // header{
+    //     height: min($heights...);
+    // }
+}
+
+
+// ESTILIZAÇÃO ESPECÍFICA - MOBILE
+ 
+@media (max-width: 450px){
+    // header{
+    //     height: max($heights...);
+
+    //     ul{
+    //         display: none;
+    //     }
+    // }
 }
