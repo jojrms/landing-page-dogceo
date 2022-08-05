@@ -2,6 +2,7 @@
 
 $heights: 10vh;
 $corFixa: #FE5B4C;
+$corAmarela: #FFBF72;
 $sombreado: 0px 0px 30px rgba(0, 0, 0, 0.082);
 
 
@@ -26,10 +27,16 @@ input, button, img, select{
     cursor: pointer;
     font-family: Poppins;
 }
+span{
+    display: block;
+}
 ul{
     display: flex;
     padding: 0;
     list-style: none;
+}
+h1, h2, h3, p{
+    margin: 0;
 }
 
 
@@ -106,12 +113,12 @@ header{
 
 .sectionInitial{
     width: 100%;
-    min-height: 50vw;
+    min-height: 40vw;
+    padding-top: 8vw;
     display: grid;
     grid-template-columns: repeat(2, 50%);
     background-image: url(../Images/Background.svg);
     background-size: cover;
-    padding-bottom: 20vw;
 
     aside:nth-of-type(1){
         width: fit-content;
@@ -189,6 +196,31 @@ header{
         background-image: url(../Images/DogIllustration.svg);
         background-size: 80%;
         background-position-y: 70%;
+    }
+}
+
+.sectionHowWorks{
+    width: fit-content;
+    min-height: 10vw;
+    margin: auto;
+    background-color: white;
+    border-bottom: 2px solid #f5f5f5;
+    display: flex;
+    align-items: center;
+    grid-gap: 6vw;
+
+    span{
+        display: flex;
+        height: fit-content;
+
+        img{
+            width: 2vw;
+            height: 2vw;
+            margin: auto;
+        }
+        p{
+            margin: auto auto auto 1vw;
+        }
     }
 }
 

@@ -52,6 +52,33 @@ const Home = () => {
                     <i/>
                 </aside>
             </section>
+
+            <section className="sectionHowWorks">
+                <span>
+                    <img src="https://img.icons8.com/fluency-systems-regular/96/000000/like--v1.png"/>
+                    <p>Ready to love?</p>
+                </span>
+                <span>
+                    <img src="https://img.icons8.com/external-those-icons-lineal-those-icons/96/000000/external-Pet-Sticker-pets-and-accessories-those-icons-lineal-those-icons.png"/>
+                    <p>be part of the <br/> woofer community</p>
+                </span>
+                <span>
+                    <img src="https://img.icons8.com/pastel-glyph/64/000000/receive-cash--v5.png"/>
+                    <p>their donations <br/> generate scores</p>
+                </span>
+                <span>
+                    <img src="https://img.icons8.com/fluency-systems-regular/96/000000/dog.png"/>
+                    <p>many pets willing to <br/> be part of the family</p>
+                </span>
+                <span>
+                    <img src="https://img.icons8.com/material-rounded/96/000000/veterinarian.png"/>
+                    <p>free veterinary <br/> support for 2 months</p>
+                </span>
+            </section>
+
+            <section className="sectionDogs">
+                
+            </section>
         </>
     )
 }
