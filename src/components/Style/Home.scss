@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700&display=swap');
 
 $heights: 10vh;
-$corSalmao: #FF7670;
-$sombreado: 0px 0px 25px rgba(0, 0, 0, 0.212);
+$corFixa: #FE5B4C;
+$sombreado: 0px 0px 30px rgba(0, 0, 0, 0.082);
 
 
 
@@ -14,16 +14,17 @@ body{
     position: absolute;
     padding: 0;
     margin: 0;
-    font-family: Arial;
+    font-family: Poppins;
 }
 body *{
     background-repeat: no-repeat;
     background-position: center;
 }
-input, button, img{
+input, button, img, select{
     background-color: transparent;
     border: none;
     cursor: pointer;
+    font-family: Poppins;
 }
 ul{
     display: flex;
@@ -84,6 +85,9 @@ header{
             li{
                 cursor: pointer;
             }
+            li:hover{
+                color: $corFixa;
+            }
         }
         input{
             background-color: black;
@@ -94,24 +98,100 @@ header{
             font-weight: 600;
             letter-spacing: .5px;
         }
+        input:hover{
+            background-color: $corFixa;
+        }
     }
 }
 
 .sectionInitial{
     width: 100%;
-    min-height: 30vh;
+    min-height: 50vw;
     display: grid;
-    grid-template-columns: repeat(2, auto);
+    grid-template-columns: repeat(2, 50%);
     background-image: url(../Images/Background.svg);
     background-size: cover;
+    padding-bottom: 20vw;
+
+    aside:nth-of-type(1){
+        width: fit-content;
+        height: fit-content;
+        margin: auto;
+        margin-left: 10vw;
+        font-family: Poppins;
+
+        h1{
+            width: fit-content;
+            font-size: 4vw;
+            font-weight: bolder;
+            line-height: 100%;
+            margin: 0;
+        }
+        h2{
+            font-size: .8vw;
+            font-weight: 500;
+            color: gray;
+            margin: 3vh 0vw;
+        }
+        p{
+            font-size: 1.1vw;
+            letter-spacing: .5px;
+            margin-bottom: 1vh;
+            font-weight: 600;
+        }
+        div{
+            width: fit-content;
+            height: fit-content;
+            margin-top: 1vw;
+            display: flex;
+            box-shadow: $sombreado;
+            background-color: white;
+            border-radius: .3vw;
+            overflow: hidden;
+
+            span:nth-of-type(1){
+                display: flex;
+                padding-inline-start: 1vw;
+                
+                img{
+                    width: 1.3vw;
+                    margin: auto;
+                }
+                select{
+                width: 8vw;
+                height: 100%;
+                padding: 2vh 2vw 2vh .5vw;
+                font-weight: 600;
+                }
+            }
+            span:nth-of-type(2){
+                background-color: $corFixa;
+                display: flex;
+                padding: 2vh 1.5vw 2vh 1vw;
+                margin-left: 1vw;
+
+                img{
+                    width: 1vw;
+                    margin: auto;
+                }
+                input{
+                    margin-left: 1vw;
+                    color: white;
+                }    
+            }
+            
+        }
+    }
 
     aside:nth-of-type(2){
         width: 100%;
         height: 100%;
-        background-image: url(../Home.js);
-        background-color: red;
+        background-image: url(../Images/DogIllustration.svg);
+        background-size: 80%;
+        background-position-y: 70%;
     }
 }
+
 
 
 // ESTILIZAÇÃO ESPECÍFICA - DESKTOP
