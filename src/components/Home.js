@@ -1,5 +1,41 @@
+import { useEffect, useState } from "react";
+import Viewer from "./Viewer";
+
 /* eslint-disable jsx-a11y/alt-text */
 const Home = () => {
+
+    const [allDogs, setAllDogs] = useState([]);
+
+    const searchDogs = async() => {
+
+        const url = 'https://dog.ceo/api/breeds/list/all'
+
+        fetch(url)
+            .then( async function(res){
+                const data = await res.json()
+
+                Object.keys(data.message).forEach(async dogBreed => {
+                    const urlImage = `https://dog.ceo/api/breed/${dogBreed}/images/random/1`
+
+                    const response = await fetch(urlImage)
+                    const data = await response.json()
+
+                    const image = await data.message
+
+                    setAllDogs(currentList => [...currentList, [dogBreed, image]])
+                })
+
+                return console.log('Está funcionando');
+            })
+            .catch( function(error){
+                return console.log('Ocorreu um problema no recebimento de informações da API, error: ' + error.message);
+            })
+
+    }
+
+    useEffect(() => {
+        searchDogs();
+    }, [])
 
     return(
         <>
@@ -77,7 +113,20 @@ const Home = () => {
             </section>
 
             <section className="sectionDogs">
-                
+                <h1>Our Dogs</h1>
+
+                <aside className="asideExbDogs">
+                    {
+                        allDogs.map( (dog) => {
+                            return (
+                                <Viewer
+                                    BreedDog={dog[0]}
+                                    ImageUrl={dog[1]}
+                                />
+                            )
+                        })
+                    }
+                </aside>
             </section>
         </>
     )
