@@ -2,7 +2,6 @@
 
 $heights: 10vh;
 $corFixa: #FE5B4C;
-$corAmarela: #FFBF72;
 $sombreado: 0px 0px 30px rgba(0, 0, 0, 0.082);
 
 
@@ -232,20 +231,111 @@ header{
     }
 }
 
-.sectionDogs{
+.howItWorks{
     padding-inline-start: 10vw;
-    padding-inline-end: 10vw;
-    margin-top: 4vw;
+    display: flex;
 
     h1{
+        width: fit-content;
+        margin-top: 5vw;
+        font-size: 3vw;
+        line-height: 100%;
+    }
+    aside{
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        grid-gap: 3vw;
+        margin-left: auto;
+        margin-top: 5vw;
+        padding-inline-end: 10vw;
+
+        article{
+
+            span{
+                width: fit-content;
+                height: fit-content;
+                background-color: #fe5b4c50;
+                border-radius: .5vw;
+                padding: 1vw;
+                img{
+                    width: 2vw;
+                    height: 2vw;
+                    margin: auto;
+                }
+            }
+
+            h2{
+                font-size: .8vw;
+                font-weight: 600;
+                line-height: 110%;
+                margin-top: 1vw;
+                margin-bottom: 1vw;
+            }
+            p{
+                color: rgb(88, 88, 88);
+            }
+        }
+    }
+}
+
+.sectionDogs{
+    padding: 4vw 10vw 0vh 10vw;
+    margin-top: 4vw;
+    background-color: #fffaf9;
+
+    h1{
+        text-align: center;
         font-size: 2vw;
-        margin-bottom: 3vw;
+        font-weight: 500;
+        margin-bottom: 1vw;
+    }
+    .divSearch{
+        width: 50%;
+        height: fit-content;
+        margin: auto auto 3vw auto;
+        display: grid;
+        grid-template-columns: 95% auto;
+        background-color: white;
+        border-radius: .6vw;
+        margin: auto auto 3vw auto;
+        padding-inline-end: 1vw;
+
+        input:nth-of-type(1){
+            padding: 2vh 2vw;
+        }
+        button{
+            width: 1.5vw;
+            height: 1.5vw;
+            background-image: url('https://img.icons8.com/ios-glyphs/30/1A1A1A/search--v1.png');
+            background-size: contain;
+            margin: auto;
+            opacity: .3;
+        }
     }
     .asideExbDogs{
         padding: 0vh 10vw 0vh 1-vw;
         display: grid;
         grid-template-columns: repeat(5, auto);
         grid-gap: 2vw;
+    }
+}
+
+footer{
+    width: 100%;
+    height: 5vw;
+    background-color: #161616;
+    background-image: url(../Images/BackgroundDogs.svg);
+    margin-top: 2vw;
+    color: white;
+    display: flex;
+
+    p{
+        width: fit-content;
+        height: fit-content;
+        margin: auto;
+        display: block;
+        margin-left: 10vw;
     }
 }
 

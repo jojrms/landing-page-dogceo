@@ -5,15 +5,20 @@ import Viewer from "./Viewer";
 const Home = () => {
 
     const [allDogs, setAllDogs] = useState([]);
+    const [dogBreed, setDogBreed] = useState({
+        breed: '',
+    });
 
     const searchDogs = async() => {
 
         const url = 'https://dog.ceo/api/breeds/list/all'
 
+        //Função para guardar todos os cachorros disponíveis na API
         fetch(url)
             .then( async function(res){
                 const data = await res.json()
 
+                //Realiza o forEach na key do objeto, pois é onde está guardado a informação do nome da raça
                 Object.keys(data.message).forEach(async dogBreed => {
                     const urlImage = `https://dog.ceo/api/breed/${dogBreed}/images/random/1`
 
@@ -22,6 +27,7 @@ const Home = () => {
 
                     const image = await data.message
 
+                    //Guarda as informações puxadas nas duas URLs em formato de uma nova array
                     setAllDogs(currentList => [...currentList, [dogBreed, image]])
                 })
 
@@ -33,6 +39,7 @@ const Home = () => {
 
     }
 
+    
     useEffect(() => {
         searchDogs();
     }, [])
@@ -50,8 +57,7 @@ const Home = () => {
                 <section>
                     <i/>
                     <ul>
-                        <li>Shop All</li>
-                        <li>How i works</li>
+                        <li>Our Dogs</li>
                         <li>Reviews</li>
                         <li>Contact</li>
                     </ul>
@@ -112,10 +118,42 @@ const Home = () => {
                 </span>
             </section>
 
-            <section className="sectionDogs">
-                <h1>Our Dogs</h1>
+            <section className="howItWorks">
+                <h1>How It <br/> Works</h1>
+                <aside>
+                    <article>
+                        <span>
+                            <img src="https://img.icons8.com/windows/96/FA5252/user.png"/>
+                        </span>
+                        <h2>Create a personal <br/> account</h2>
+                        <p>Create your petcular account,<br/> access our dogs available for<br/> adoption and stay on top of new<br/> redemptions</p>
+                    </article>
+                    <article>
+                        <span>
+                            <img src="https://img.icons8.com/fluency-systems-regular/96/FA5252/dog-park.png"/>
+                        </span>
+                        <h2>Search and view <br/> a dog</h2>
+                        <p>See the dogs available to be <br/> filled with love and adopted</p>
+                    </article>
+                    <article>
+                        <span>
+                            <img src="https://img.icons8.com/fluency-systems-regular/96/FA5252/talk-male.png"/>
+                        </span>
+                        <h2>Show your interest and we'll <br/> get back to you</h2>
+                        <p>After finding a pet, show your <br/> interest in it and we will contact<br/> you</p>
+                    </article>
+                </aside>
+            </section>
 
-                <aside className="asideExbDogs">
+            <section className="sectionDogs">
+                <h1>Dogs available for adoption</h1>
+                <div className="divSearch">
+                    <input type='search' value={dogBreed.breed} placeholder="Qué buscas aqui?" 
+                            onChange={(event) => setDogBreed({...dogBreed, breed: event.target.value})}/>
+                    <button id='btn-search'/>
+                </div>
+
+                <aside className="asideExbDogs" id="asideExbDogs">
                     {
                         allDogs.map( (dog) => {
                             return (
@@ -128,6 +166,10 @@ const Home = () => {
                     }
                 </aside>
             </section>
+
+            <footer>
+                <p>© 2021 Petcular - Powered by Latest</p>
+            </footer>
         </>
     )
 }
