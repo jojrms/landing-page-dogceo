@@ -314,10 +314,12 @@ header{
         }
     }
     .asideExbDogs{
-        padding: 0vh 10vw 0vh 1-vw;
-        display: grid;
-        grid-template-columns: repeat(5, auto);
-        grid-gap: 2vw;
+
+        .divExbDogs{
+            display: grid;
+            grid-template-columns: repeat(5, auto);
+            grid-gap: 2vw;
+        }
     }
 }
 

@@ -148,22 +148,24 @@ const Home = () => {
             <section className="sectionDogs">
                 <h1>Dogs available for adoption</h1>
                 <div className="divSearch">
-                    <input type='search' value={dogBreed.breed} placeholder="Qué buscas aqui?" 
+                    <input type='search' value={dogBreed.breed} placeholder="What you search here?" 
                             onChange={(event) => setDogBreed({...dogBreed, breed: event.target.value})}/>
                     <button id='btn-search'/>
                 </div>
 
                 <aside className="asideExbDogs" id="asideExbDogs">
-                    {
-                        allDogs.map( (dog) => {
-                            return (
-                                <Viewer
-                                    BreedDog={dog[0]}
-                                    ImageUrl={dog[1]}
-                                />
-                            )
-                        })
-                    }
+                    <div className="divExbDogs">
+                        {
+                            allDogs.map( (dog) => {
+                                return (
+                                    <Viewer
+                                        BreedDog={dog[0]}
+                                        ImageUrl={dog[1]}
+                                    />
+                                )
+                            })
+                        }
+                    </div>
                 </aside>
             </section>
 
